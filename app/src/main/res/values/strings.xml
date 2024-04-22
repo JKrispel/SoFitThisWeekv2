@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SoFitThisWeekv2</string>
+    <string name="STATYSTKI">STATYSTKI</string>
+    <string name="TRENING">TRENING</string>
+    <string name="ODŻYWIANIE">ODŻYWIANIE</string>
+    <string name="KALENDARZ">KALENDARZ</string>
+    <string name="TwojaNazwa">Twoja nazwa:</string>
+    <string name="Email">E-mail</string>
+    <string name="Wzrost">Wzrost:</string>
+    <string name="Waga">Waga:</string>
+    <string name="TwójProfil">Twój profil</string>
+</resources>
