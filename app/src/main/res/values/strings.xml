@@ -5,8 +5,19 @@
     <string name="ODŻYWIANIE">ODŻYWIANIE</string>
     <string name="KALENDARZ">KALENDARZ</string>
     <string name="TwojaNazwa">Twoja nazwa:</string>
-    <string name="Email">E-mail</string>
+    <string name="Email">E-mail:</string>
     <string name="Wzrost">Wzrost:</string>
     <string name="Waga">Waga:</string>
     <string name="TwójProfil">Twój profil</string>
+    <string name="prevName">MojaNazwa</string>
+    <string name="prevEmail">myemail@example.com</string>
+    <string name="prevHeight">175</string>
+    <string name="prevWeight">75</string>
+    <string name="editProfile">edytuj profil</string>
+    <string name="saveChanges">zapisz zmiany</string>
+    <string name="statsTitle">Statystyki</string>
+    <string name="calendarLabel">Kalendarz</string>
+    <string name="nutritionLabel">Odżywianie</string>
+    <string name="trainingLabel">Trening</string>
+    <string name="profileButtonLabel">PROFIL</string>
 </resources>
