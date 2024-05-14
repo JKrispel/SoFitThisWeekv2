@@ -10,19 +10,21 @@
     <Button
         android:id="@+id/bProfileMenu"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="95dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
         android:padding="2dp"
         android:text="@string/profileButtonLabel"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bNutritionMenu"
         app:layout_constraintStart_toEndOf="@+id/bStatsMenu" />
 
     <Button
         android:id="@+id/bCalendarMenu"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="95dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
@@ -37,26 +39,30 @@
     <Button
         android:id="@+id/bStatsMenu"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="95dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
         android:padding="2dp"
         android:text="@string/STATYSTKI"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bProfileMenu"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/bNutritionMenu"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="95dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
         android:padding="2dp"
         android:text="@string/ODŻYWIANIE"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bCalendarMenu"
         app:layout_constraintStart_toEndOf="@+id/bProfileMenu" />
 
     <TextView
