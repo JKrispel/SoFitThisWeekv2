@@ -51,7 +51,7 @@ class NutritionChangeGoal : AppCompatActivity() {
             val protein = editProtein.text.toString().toIntOrNull()
             val fats = editFats.text.toString().toIntOrNull()
             val carbs = editCarbs.text.toString().toIntOrNull()
-            var sum: Int
+            val sum: Int
 
             if (calories != null && protein != null && fats != null && carbs != null)
             {
