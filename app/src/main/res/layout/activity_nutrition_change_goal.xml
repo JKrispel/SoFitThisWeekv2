@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NutritionChangeGoal">
+
+  <EditText
+      android:id="@+id/editCarbs"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:ems="10"
+      android:hint="40"
+      android:inputType="number"
+      app:layout_constraintBottom_toBottomOf="@+id/textView9"
+      app:layout_constraintStart_toEndOf="@+id/textView9"
+      app:layout_constraintTop_toTopOf="@+id/textView9" />
+
+  <TextView
+      android:id="@+id/textView9"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="50dp"
+      android:text="@string/carbsGoal"
+      android:textSize="20sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+  <TextView
+      android:id="@+id/textView8"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="50dp"
+      android:text="@string/fatsCount"
+      android:textSize="20sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+  <EditText
+      android:id="@+id/editFats"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:ems="10"
+      android:hint="30"
+      android:inputType="number"
+      app:layout_constraintBottom_toBottomOf="@+id/textView8"
+      app:layout_constraintStart_toEndOf="@+id/textView8"
+      app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+  <EditText
+      android:id="@+id/editProtein"
+      android:layout_width="207dp"
+      android:layout_height="43dp"
+      android:layout_marginStart="16dp"
+      android:ems="10"
+      android:hint="30"
+      android:inputType="number"
+      app:layout_constraintBottom_toBottomOf="@+id/textView7"
+      app:layout_constraintStart_toEndOf="@+id/textView7"
+      app:layout_constraintTop_toTopOf="@+id/textView7" />
+
+  <TextView
+      android:id="@+id/textView7"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="50dp"
+      android:text="@string/proteinGoal"
+      android:textSize="20sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+  <TextView
+      android:id="@+id/caloriesGoalLabel"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="24dp"
+      android:text="@string/changeGoalLabel"
+      android:textSize="30sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/textView5"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="60dp"
+      android:text="@string/caloriesCountLabel"
+      android:textSize="20sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/caloriesGoalLabel" />
+
+  <EditText
+      android:id="@+id/editCalories"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:ems="10"
+      android:hint="2400"
+      android:inputType="number"
+      app:layout_constraintBottom_toBottomOf="@+id/textView5"
+      app:layout_constraintStart_toEndOf="@+id/textView5"
+      app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+  <Button
+      android:id="@+id/bApplyGoal"
+      android:layout_width="159dp"
+      android:layout_height="74dp"
+      android:layout_marginTop="40dp"
+      android:background="@drawable/sharp_button_background"
+      android:clickable="true"
+      android:focusable="true"
+      android:text="@string/applyGoalButton"
+      android:textSize="20sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/editCarbs" />
+
+  <TextView
+      android:id="@+id/textMacroError"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="32dp"
+      android:text="@string/macroError"
+      android:textAlignment="center"
+      android:textColor="#F60000"
+      android:textSize="25sp"
+      android:visibility="invisible"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/bApplyGoal" />
+
+  <TextView
+      android:id="@+id/nullError"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="8dp"
+      android:text="@string/nullError"
+      android:textColor="#DD0404"
+      android:visibility="invisible"
+      app:layout_constraintBottom_toTopOf="@+id/bApplyGoal"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

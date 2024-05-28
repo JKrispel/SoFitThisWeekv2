@@ -20,4 +20,18 @@
     <string name="nutritionLabel">Odżywianie</string>
     <string name="trainingLabel">Trening</string>
     <string name="profileButtonLabel">PROFIL</string>
+    <string name="caloriesLabel">KALORIE</string>
+    <string name="proteinLabel">BIAŁKO</string>
+    <string name="fatsLabel">TŁUSZCZE</string>
+    <string name="carbsLabel">WĘGLOWODANY</string>
+    <string name="addProduct">DODAJ\nPRODUKT</string>
+    <string name="caloriesGoal">DOSTOSUJ CEL\nKALORYCZNY</string>
+    <string name="changeGoalLabel">Dostosuj swój cel</string>
+    <string name="caloriesCountLabel">Cel kaloryczny</string>
+    <string name="proteinGoal">Białko [%]</string>
+    <string name="fatsCount">Tłuszcze [%]</string>
+    <string name="carbsGoal">Węglowodany [%]</string>
+    <string name="macroError">Ilość makro elementów nie sumuję się do 100%!!!</string>
+    <string name="applyGoalButton">Zmień cel</string>
+    <string name="nullError">Jedna z pozycji nie została uzupełniona!!!</string>
 </resources>
