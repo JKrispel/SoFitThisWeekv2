@@ -34,4 +34,14 @@
     <string name="macroError">Ilość makro elementów nie sumuję się do 100%!!!</string>
     <string name="applyGoalButton">Zmień cel</string>
     <string name="nullError">Jedna z pozycji nie została uzupełniona!!!</string>
+    <string name="addProductLabel">Dodaj spożyty produkt</string>
+    <string name="weight">"Gramatura: "</string>
+    <string name="gramUnit">g</string>
+    <string name="productCaloriesLabel">Kalorie:</string>
+    <string name="productProteinLabel">Białko:</string>
+    <string name="productFatsLabel">Tłuszcze:</string>
+    <string name="productCarbsLabel">Węglowodany:</string>
+    <string name="productMacroLabel">Wartości odżywcze w 100g:</string>
+    <string name="buttonAddProduct">Dodaj produkt\ndo podsumowania\ndziennego</string>
+    <string name="caloriesUnit">kcal</string>
 </resources>

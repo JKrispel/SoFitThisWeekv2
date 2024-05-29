@@ -44,6 +44,7 @@ class NutritionChangeGoal : AppCompatActivity() {
         editCarbs = findViewById(R.id.editCarbs)
         bApplyGoal = findViewById(R.id.bApplyGoal)
         macroError = findViewById(R.id.textMacroError)
+        nullError = findViewById(R.id.nullError)
 
         bApplyGoal.setOnClickListener {
 
@@ -51,11 +52,10 @@ class NutritionChangeGoal : AppCompatActivity() {
             val protein = editProtein.text.toString().toIntOrNull()
             val fats = editFats.text.toString().toIntOrNull()
             val carbs = editCarbs.text.toString().toIntOrNull()
-            val sum: Int
 
             if (calories != null && protein != null && fats != null && carbs != null)
             {
-                sum = protein + fats + carbs
+                val sum = protein + fats + carbs
 
                 if (sum == 100) {
 
