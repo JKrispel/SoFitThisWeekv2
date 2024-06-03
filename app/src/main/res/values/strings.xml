@@ -44,4 +44,16 @@
     <string name="productMacroLabel">Wartości odżywcze w 100g:</string>
     <string name="buttonAddProduct">Dodaj produkt\ndo podsumowania\ndziennego</string>
     <string name="caloriesUnit">kcal</string>
+    <string name="createTraining">Utwórz trening</string>
+    <string name="mergeIntoTraining">Połącz ćwiczenia w trening</string>
+    <string name="addExercise">Dodaj ćwiczenie</string>
+    <string name="exerciseName">Nazwa ćwiczenia</string>
+    <string name="kgUnit">kg</string>
+    <string name="repWeight">Obciążenie:</string>
+    <string name="createExerciseLabel">Utwórz ćwiczenie</string>
+    <string name="exerciseNameLabel">"Nazwa ćwiczenia: "</string>
+    <string name="setsNumberLabel">"Ilość serii: "</string>
+    <string name="repsNumberLabel">"Ilość powtórzeń: "</string>
+    <string name="exerciseWeightLabel">"Obciążenie: "</string>
+    <string name="bAddNewExercise">Dodaj nowe ćwiczenie</string>
 </resources>

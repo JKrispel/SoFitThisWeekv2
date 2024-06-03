@@ -11,10 +11,17 @@ class Training : AppCompatActivity() {
     private lateinit var bNutrition: Button
     private lateinit var bCalendar: Button
     private lateinit var bProfile: Button
+    private lateinit var bCreateTraining: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_training)
+
+        bCreateTraining = findViewById(R.id.bCreateTraining)
+        bCreateTraining.setOnClickListener {
+            val intent = Intent(this, CreateTraining::class.java)
+            startActivity(intent)
+        }
 
         bStats = findViewById(R.id.bStatsMenu)
         bStats.setOnClickListener {

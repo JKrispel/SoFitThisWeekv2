@@ -4,10 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class AddProduct : AppCompatActivity() {
 
@@ -16,7 +13,7 @@ class AddProduct : AppCompatActivity() {
     private lateinit var editProtein: EditText
     private lateinit var editFats: EditText
     private lateinit var editCarbs: EditText
-    private lateinit var bAddProduct: Button
+    private lateinit var bAddNewProduct: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +26,8 @@ class AddProduct : AppCompatActivity() {
         editCarbs = findViewById(R.id.editProductCarbs)
 
 
-        bAddProduct = findViewById(R.id.bAddNewProduct)
-        bAddProduct.setOnClickListener {
+        bAddNewProduct = findViewById(R.id.bAddNewProduct)
+        bAddNewProduct.setOnClickListener {
 
             val productWeight = editProductWeight.text.toString().toFloatOrNull() ?: 0f
             val caloriesPer100g = editCalories.text.toString().toFloatOrNull() ?: 0f

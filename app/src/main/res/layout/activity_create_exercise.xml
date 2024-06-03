@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateExercise">
+
+    <TextView
+        android:id="@+id/setsNumberLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/setsNumberLabel"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editExerciseName" />
+
+    <TextView
+        android:id="@+id/exerciseWeightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/exerciseWeightLabel"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repsNumberLabel" />
+
+    <TextView
+        android:id="@+id/repsNumberLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/repsNumberLabel"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editSetsNumber" />
+
+    <EditText
+            android:id="@+id/editExerciseWeight"
+            android:layout_width="99dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:inputType="number|numberDecimal"
+            app:layout_constraintBottom_toBottomOf="@+id/exerciseWeightLabel"
+            app:layout_constraintStart_toEndOf="@+id/exerciseWeightLabel"
+            app:layout_constraintTop_toTopOf="@+id/exerciseWeightLabel"
+            app:layout_constraintVertical_bias="0.181" />
+
+    <EditText
+        android:id="@+id/editRepsNumber"
+        android:layout_width="99dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/repsNumberLabel"
+        app:layout_constraintStart_toEndOf="@+id/repsNumberLabel"
+        app:layout_constraintTop_toTopOf="@+id/repsNumberLabel"
+        app:layout_constraintVertical_bias="0.363" />
+
+    <TextView
+        android:id="@+id/exerciseWeightUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/kgUnit"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toBottomOf="@+id/editExerciseWeight"
+        app:layout_constraintStart_toEndOf="@+id/editExerciseWeight"
+        app:layout_constraintTop_toTopOf="@+id/editExerciseWeight"
+        app:layout_constraintVertical_bias="0.555" />
+
+        <EditText
+            android:id="@+id/editSetsNumber"
+            android:layout_width="99dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/setsNumberLabel"
+            app:layout_constraintStart_toEndOf="@+id/setsNumberLabel"
+            app:layout_constraintTop_toTopOf="@+id/setsNumberLabel"
+            app:layout_constraintVertical_bias="0.545" />
+
+        <TextView
+            android:id="@+id/createExerciseLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/createExerciseLabel"
+            android:textSize="30sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/exerciseNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/exerciseNameLabel"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createExerciseLabel" />
+
+    <EditText
+        android:id="@+id/editExerciseName"
+        android:layout_width="161dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/exerciseNameLabel"
+        app:layout_constraintStart_toEndOf="@+id/exerciseNameLabel"
+        app:layout_constraintTop_toTopOf="@+id/exerciseNameLabel" />
+
+    <Button
+        android:id="@+id/bAddNewExercise"
+        android:layout_width="233dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/sharp_button_background"
+        android:text="@string/bAddNewExercise"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
