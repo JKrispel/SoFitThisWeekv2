@@ -1,12 +1,15 @@
 package pl.edu.swps.sofitthisweekv2
 
+import TrainingPlan
 import android.content.Context
 import android.os.Build
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
+import android.widget.EditText
+import android.widget.CheckBox
 import android.widget.LinearLayout
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -17,7 +20,7 @@ class CreateTraining : AppCompatActivity() {
     private lateinit var bMergeIntoTraining: Button
     private lateinit var linearLayoutContainer: LinearLayout
     private val exercises = mutableListOf<Exercise>()
-    private val sharedPreferences by lazy { getSharedPreferences("exercises_prefs", Context.MODE_PRIVATE) }
+    private val sharedPreferences by lazy { getSharedPreferences("training_plans_prefs", Context.MODE_PRIVATE) }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,8 +52,7 @@ class CreateTraining : AppCompatActivity() {
         bMergeIntoTraining = findViewById(R.id.bMergeIntoTraining)
         bMergeIntoTraining.setOnClickListener {
 
-
-
+            showTrainingNameDialog()
         }
 
     }
@@ -63,10 +65,11 @@ class CreateTraining : AppCompatActivity() {
 
     private fun addExercise(exercise: Exercise) {
         exercises.add(exercise)
-        addExerciseTextView(exercise)
+        addExerciseCheckBox(exercise)
     }
 
-    private fun addExerciseTextView(exercise: Exercise) {
+
+    private fun addExerciseCheckBox(exercise: Exercise) {
         val exerciseDetails = """
             ${exercise.name}
             Serie: ${exercise.sets}
@@ -74,13 +77,27 @@ class CreateTraining : AppCompatActivity() {
             Obciążenie: ${exercise.weight}
         """.trimIndent()
 
-        val textView = TextView(this).apply {
+        val checkBox = CheckBox(this).apply {
             text = exerciseDetails
             textSize = 18f
             setPadding(16, 16, 16, 16)
         }
 
-        linearLayoutContainer.addView(textView)
+        linearLayoutContainer.addView(checkBox)
+    }
+
+    private fun showTrainingNameDialog() {
+        val editText = EditText(this)
+        val dialog = AlertDialog.Builder(this)
+            .setTitle("Nazwij swój trening")
+            .setView(editText)
+            .setPositiveButton("Zapisz") { _, _ ->
+                val trainingName = editText.text.toString()
+                combineExercises(trainingName)
+            }
+            .setNegativeButton("Anuluj", null)
+            .create()
+        dialog.show()
     }
 
     private fun saveExercises() {
@@ -96,7 +113,38 @@ class CreateTraining : AppCompatActivity() {
             val type = object : TypeToken<List<Exercise>>() {}.type
             val savedExercises: List<Exercise> = gson.fromJson(json, type)
             exercises.addAll(savedExercises)
-            exercises.forEach { addExerciseTextView(it) }
+            exercises.forEach { addExerciseCheckBox(it) }
         }
     }
+
+    private fun combineExercises(trainingName: String) {
+        val selectedExercises = mutableListOf<Exercise>()
+
+        for (i in 0 until linearLayoutContainer.childCount) {
+            val checkBox = linearLayoutContainer.getChildAt(i) as CheckBox
+            if (checkBox.isChecked) {
+                selectedExercises.add(exercises[i])
+            }
+        }
+
+        val trainingPlan = TrainingPlan(trainingName, selectedExercises)
+        saveTrainingPlan(trainingPlan)
+
+        val intent = Intent(this, Training::class.java)
+        startActivity(intent)
+    }
+
+    private fun saveTrainingPlan(trainingPlan: TrainingPlan) {
+        val gson = Gson()
+        val json = sharedPreferences.getString("training_plans", "[]")
+        val type = object : TypeToken<MutableList<TrainingPlan>>() {}.type
+        val trainingPlans: MutableList<TrainingPlan> = gson.fromJson(json, type)
+
+        trainingPlans.add(trainingPlan)
+
+        val updatedJson = gson.toJson(trainingPlans)
+        sharedPreferences.edit().putString("training_plans", updatedJson).apply()
+    }
+
+
 }

@@ -13,7 +13,6 @@ class CreateExercise : AppCompatActivity() {
     private lateinit var editRepsNumber: EditText
     private lateinit var editSetsNumber: EditText
     private lateinit var editExerciseWeight: EditText
-    private lateinit var editCarbs: EditText
     private lateinit var bAddNewExercise: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

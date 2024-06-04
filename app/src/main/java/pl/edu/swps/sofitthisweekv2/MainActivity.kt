@@ -9,7 +9,10 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-
+// TODO okreslic dzialanie dla przycisku cofania w kazdym Activity (obecnie cofa zmiany)
+// TODO Calendar (11 + podwidoki)
+// TODO opcjonalnie: Statystyki
+// TODO opcjonalnie: usuwanie cwiczen i treningow
 class MainActivity : AppCompatActivity() {
 
     private lateinit var userName: TextView
