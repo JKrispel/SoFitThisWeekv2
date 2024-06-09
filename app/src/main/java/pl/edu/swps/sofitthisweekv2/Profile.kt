@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 // TODO Calendar (11 + podwidoki)
 // TODO opcjonalnie: Statystyki
 // TODO opcjonalnie: usuwanie cwiczen i treningow
-class MainActivity : AppCompatActivity() {
+class Profile : AppCompatActivity() {
 
     private lateinit var userName: TextView
     private lateinit var userEmail: TextView
@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
 
         bCalendar = findViewById<Button>(R.id.bCalendarMenu)
         bCalendar.setOnClickListener {
-            val intent = Intent(this, Calendar::class.java)
+            val intent = Intent(this, CalendarActivity::class.java)
             startActivity(intent)
         }
         // Initialize the views

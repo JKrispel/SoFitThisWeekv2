@@ -56,4 +56,20 @@
     <string name="repsNumberLabel">"Ilość powtórzeń: "</string>
     <string name="exerciseWeightLabel">"Obciążenie: "</string>
     <string name="bAddNewExercise">Dodaj nowe ćwiczenie</string>
+    <string name="createRoutine">Utwórz rutynę</string>
+    <string name="trainingType">Rodzaj treningu:</string>
+    <string name="chooseDay">Wybierz dni tygodnia:</string>
+    <string name="monday">poniedziałek</string>
+    <string name="tuesday">wtorek</string>
+    <string name="wednesday">środa</string>
+    <string name="thursday">czwartek</string>
+    <string name="friday">piątek</string>
+    <string name="saturday">sobota</string>
+    <string name="sunday">niedziela</string>
+    <string name="pickStartDate">Wybierz datę rozpoczęcia</string>
+    <string name="pickEndDate">Wybierz datę zakończenia</string>
+    <string name="startDate">Data rozpoczęcia:</string>
+    <string name="endDate">Data zakończenia:</string>
+    <string name="saveRoutine">Dodaj rutynę do kalendarza</string>
+    <string name="trainingsToday">Dzisiejsze treningi:</string>
 </resources>

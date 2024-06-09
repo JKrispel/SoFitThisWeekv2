@@ -82,13 +82,13 @@ class Nutrition : AppCompatActivity() {
 
         bCalendar = findViewById(R.id.bCalendarMenu)
         bCalendar.setOnClickListener {
-            val intent = Intent(this, Calendar::class.java)
+            val intent = Intent(this, CalendarActivity::class.java)
             startActivity(intent)
         }
 
         bProfile = findViewById(R.id.bProfileMenu)
         bProfile.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, Profile::class.java)
             startActivity(intent)
         }
     }

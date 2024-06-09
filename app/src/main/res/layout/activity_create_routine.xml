@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateRoutine">
+
+
+    <!-- Add checkboxes for other days similarly -->
+
+    <CheckBox
+        android:id="@+id/checkMonday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/monday"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvSelectDays"
+        app:layout_constraintStart_toStartOf="@+id/tvSelectDays"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelectDays" />
+
+    <CheckBox
+        android:id="@+id/checkSunday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/sunday"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/checkSaturday"
+        app:layout_constraintTop_toBottomOf="@+id/checkSaturday" />
+
+    <CheckBox
+        android:id="@+id/checkSaturday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/saturday"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/checkFriday"
+        app:layout_constraintTop_toBottomOf="@+id/checkFriday" />
+
+    <CheckBox
+        android:id="@+id/checkFriday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/friday"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/checkThursday"
+        app:layout_constraintTop_toBottomOf="@+id/checkThursday" />
+
+    <CheckBox
+        android:id="@+id/checkThursday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/thursday"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSelectDays"
+        app:layout_constraintStart_toEndOf="@+id/tvSelectDays"
+        app:layout_constraintTop_toTopOf="@+id/tvSelectDays" />
+
+    <CheckBox
+        android:id="@+id/checkWednesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/wednesday"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/checkTuesday"
+        app:layout_constraintTop_toBottomOf="@+id/checkTuesday" />
+
+    <Button
+        android:id="@+id/btnPickStartDate"
+        android:layout_width="168dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/sharp_button_background"
+        android:text="@string/pickStartDate"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkSunday" />
+
+    <Button
+        android:id="@+id/btnPickEndDate"
+        android:layout_width="158dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/sharp_button_background"
+        android:text="@string/pickEndDate"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStartDate" />
+
+    <TextView
+        android:id="@+id/tvStartDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/startDate"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPickStartDate" />
+
+    <CheckBox
+        android:id="@+id/checkTuesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tuesday"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/checkMonday"
+        app:layout_constraintTop_toBottomOf="@+id/checkMonday" />
+
+    <TextView
+        android:id="@+id/tvEndDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/endDate"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tvStartDate"
+        app:layout_constraintTop_toBottomOf="@+id/btnPickEndDate" />
+
+    <TextView
+        android:id="@+id/tvSelectDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/chooseDay"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerTrainingPlans" />
+
+    <Spinner
+        android:id="@+id/spinnerTrainingPlans"
+        android:layout_width="173dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView10"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+    <Button
+        android:id="@+id/btnSaveTraining"
+        android:layout_width="181dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/sharp_button_background"
+        android:text="@string/saveRoutine"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/displayEndDate"
+        app:layout_constraintVertical_bias="0.65999997" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/createRoutine"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/trainingType"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/displayStartDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvStartDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toEndOf="@+id/tvStartDate"
+        app:layout_constraintTop_toTopOf="@+id/tvStartDate" />
+
+    <TextView
+        android:id="@+id/displayEndDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvEndDate"
+        app:layout_constraintStart_toStartOf="@+id/displayStartDate"
+        app:layout_constraintTop_toTopOf="@+id/tvEndDate" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
