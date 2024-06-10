@@ -9,6 +9,11 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 // TODO okreslic dzialanie dla przycisku cofania w kazdym Activity (obecnie cofa zmiany)
 // TODO Calendar (11 + podwidoki)
@@ -40,6 +45,20 @@ class Profile : AppCompatActivity() {
         editor.putString("Email", inputEmail.text.toString())
         editor.putString("Height", inputHeight.text.toString())
         editor.putString("Weight", inputWeight.text.toString())
+        // Save weight history
+        val gson = Gson()
+        val json = sharedPreferences.getString("WeightHistory", "{}")
+        val type = object : TypeToken<MutableMap<String, Float>>() {}.type
+        val weightHistory: MutableMap<String, Float> = gson.fromJson(json, type)
+
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        val currentDate = dateFormat.format(Date())
+        val newWeight = inputWeight.text.toString().toFloatOrNull() ?: 0f
+
+        weightHistory[currentDate] = newWeight
+
+        val updatedJson = gson.toJson(weightHistory)
+        editor.putString("WeightHistory", updatedJson)
         editor.apply() // or editor.commit() for synchronous saving
     }
 
@@ -60,7 +79,7 @@ class Profile : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_profile)
 
         bStats = findViewById(R.id.bStatsMenu)
         bStats.setOnClickListener {

@@ -72,4 +72,7 @@
     <string name="endDate">Data zakończenia:</string>
     <string name="saveRoutine">Dodaj rutynę do kalendarza</string>
     <string name="trainingsToday">Dzisiejsze treningi:</string>
+    <string name="totalTrainingsCompleted">Liczba ukończonych treningów:</string>
+    <string name="BMI">BMI (Body Mass Index):</string>
+    <string name="bodyMassLinear">Wykres masy ciała (ostatnie 30 dni):</string>
 </resources>

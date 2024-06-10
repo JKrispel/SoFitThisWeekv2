@@ -3,3 +3,7 @@ plugins {
     alias(libs.plugins.androidApplication) apply false
     alias(libs.plugins.jetbrainsKotlinAndroid) apply false
 }
+
+tasks.register<Delete>("clean") {
+    delete(rootProject.layout.buildDirectory)
+}

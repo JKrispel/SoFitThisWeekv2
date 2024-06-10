@@ -227,4 +227,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editWeight" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="264dp"
+        android:layout_height="255dp"
+        app:layout_constraintBottom_toTopOf="@+id/bNutritionMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bEditProfile"
+        app:srcCompat="@android:drawable/ic_menu_myplaces" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
