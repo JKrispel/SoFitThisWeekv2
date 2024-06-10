@@ -1,10 +1,12 @@
 package pl.edu.swps.sofitthisweekv2
 
 import TrainingPlan
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 
 class DisplayTraining : AppCompatActivity() {
@@ -27,6 +29,16 @@ class DisplayTraining : AppCompatActivity() {
         trainingPlan?.exercises?.forEach {
             addExerciseTextView(it)
         }
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // Handle the back button event
+                val intent = Intent(this@DisplayTraining, Training::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+                finish() // Finish the current activity
+            }
+        })
     }
 
     private fun addExerciseTextView(exercise: Exercise) {

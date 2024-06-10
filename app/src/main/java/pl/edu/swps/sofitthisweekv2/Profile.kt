@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 
 // TODO okreslic dzialanie dla przycisku cofania w kazdym Activity (obecnie cofa zmiany)
@@ -107,6 +108,13 @@ class Profile : AppCompatActivity() {
         editProfile.setOnClickListener {
             toggleEdit()
         }
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // Handle the back button event
+                finish() // Finish the current activity
+            }
+        })
     }
 
     private fun toggleEdit() {

@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -79,6 +80,13 @@ class CalendarActivity : AppCompatActivity() {
             val intent = Intent(this, CreateRoutine::class.java)
             startActivity(intent)
         }
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // Handle the back button event
+                finish() // Finish the current activity
+            }
+        })
     }
 
     private fun loadTrainingSchedules() {

@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -71,6 +72,17 @@ class CreateRoutine : AppCompatActivity() {
 
         // Load training plans and populate the spinner
         loadTrainingPlans()
+
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // Handle the back button event
+                val intent = Intent(this@CreateRoutine, Calendar::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+                finish() // Finish the current activity
+            }
+        })
     }
 
     private fun pickDate(onDateSelected: (Long) -> Unit) {

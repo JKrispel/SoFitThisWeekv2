@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.CheckBox
 import android.widget.LinearLayout
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
@@ -55,6 +56,15 @@ class CreateTraining : AppCompatActivity() {
             showTrainingNameDialog()
         }
 
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // Handle the back button event
+                val intent = Intent(this@CreateTraining, Training::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+                finish() // Finish the current activity
+            }
+        })
     }
 
 

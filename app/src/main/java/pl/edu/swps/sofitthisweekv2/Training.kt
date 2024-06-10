@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -58,6 +59,13 @@ class Training : AppCompatActivity() {
             val intent = Intent(this, Profile::class.java)
             startActivity(intent)
         }
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // Handle the back button event
+                finish() // Finish the current activity
+            }
+        })
     }
 
     private fun loadTrainingPlans() {

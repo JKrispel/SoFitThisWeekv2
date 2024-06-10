@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 
 class CreateExercise : AppCompatActivity() {
@@ -39,5 +40,15 @@ class CreateExercise : AppCompatActivity() {
             intent.putExtra("exercise", newExercise)
             startActivity(intent)
         }
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // Handle the back button event
+                val intent = Intent(this@CreateExercise, CreateTraining::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+                finish() // Finish the current activity
+            }
+        })
     }
 }
