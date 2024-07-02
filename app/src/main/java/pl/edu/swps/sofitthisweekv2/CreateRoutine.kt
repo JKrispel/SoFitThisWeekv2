@@ -58,13 +58,13 @@ class CreateRoutine : AppCompatActivity() {
         btnPickStartDate.setOnClickListener {
             pickDate { date ->
                 startDate = date
-                displayStartDate.text = dateToString(startDate - 1)
+                displayStartDate.text = dateToString(startDate)
             }
         }
         btnPickEndDate.setOnClickListener {
             pickDate { date ->
                 endDate = date
-                displayEndDate.text = dateToString(endDate - 1)
+                displayEndDate.text = dateToString(endDate)
             }
         }
 
@@ -77,7 +77,7 @@ class CreateRoutine : AppCompatActivity() {
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 // Handle the back button event
-                val intent = Intent(this@CreateRoutine, Calendar::class.java)
+                val intent = Intent(this@CreateRoutine, CalendarActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
                 finish() // Finish the current activity
